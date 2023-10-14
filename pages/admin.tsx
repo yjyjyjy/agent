@@ -6,7 +6,6 @@ import { createPagesServerClient } from '@supabase/auth-helpers-nextjs';
 import { useState } from 'react';
 import axios from 'axios';
 import DropDownMenu from '@/components/ui/DropDownMenu';
-import { sdCheckpoints } from 'lib/imageGenConstants'
 import { useToasts } from 'react-toast-notifications'
 
 export default function Index() {

@@ -1,6 +1,4 @@
 import { Price } from 'types';
-import { aspectRatioList } from 'lib/imageGenConstants';
-
 
 export const getURL = () => {
   let url =
