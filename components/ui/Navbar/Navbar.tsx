@@ -18,7 +18,6 @@ import { Fragment, useEffect, useState } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import classNames from 'classnames';
 import { SiDiscord } from 'react-icons/si';
-import { Mixpanel, MixpanelEvents } from 'lib/mixpanel';
 import { useToasts } from 'react-toast-notifications';
 import axios from 'axios';
 import CreditCardForm from 'components/payment/payment-form';
@@ -55,19 +54,6 @@ export default function Navbar({ recipes }) {
     // Do something with currentUrl
   }, []);
 
-  useEffect(() => {
-    if (user) {
-      Mixpanel.identify(user.id)
-      Mixpanel.people.set({
-        $email: user.email,
-        $id: user.id,
-        $created: user.created_at,
-        $last_login: new Date(),
-      });
-      // updateNavBarUser()
-
-    }
-  }, [user]);
 
   const Timer = (props: { totalSecondsToCountDown: number }) => {
     const { totalSecondsToCountDown } = props;
@@ -264,26 +250,6 @@ export default function Navbar({ recipes }) {
             </div>
           </div>
           }
-          {/* <div className='flex items-center hover:cursor-pointer'
-            onClick={() => {
-              Mixpanel.track(MixpanelEvents['Interact'], {
-                action: 'creator_signup',
-                entryPoint: 'nav_button_creator',
-              })
-              router.push('/join-us');
-            }}
-          >
-            <button className="btn btn-xs">BECOME a creator 🚀</button>
-          </div > */}
-
-          {/* <div className=''>
-            {!user && (
-              <Link href="/signin" className={s.link}>
-                Sign in
-              </Link>
-            )}
-          </div> */}
-
           {user && <>
             <div className="stat-value text-primary text-lg">{
               //@ts-ignore
