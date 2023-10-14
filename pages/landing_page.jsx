@@ -64,8 +64,8 @@ export default function LandingPage() {
                                 }}
                                 className="relative md:ml-[-10px] md:mb-[37px] font-extrabold text-[16vw] md:text-[130px] font-inter text-base-400 leading-[0.9] tracking-[-2px]"
                             >
-                                Create,  <br />
-                                Connect, Earn, <br />
+                                Connect,  <br />
+                                Earn, <br />
                                 <span className="text-primary">Effortlessly</span>
                                 <span className="font-inter text-primary">.</span>
                             </motion.h1>
@@ -83,21 +83,7 @@ export default function LandingPage() {
                                 >
                                     <div className="btn btn-primary btn-wide w-full md:w-auto" onClick={() => {
                                         router.push('/signin');
-                                    }}>Sign in</div>
-                                </motion.div>
-                                <motion.div
-                                    initial={{ opacity: 0, y: 40 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{
-                                        delay: 0.55,
-                                        duration: 0.55,
-                                        ease: [0.075, 0.82, 0.965, 1],
-                                    }}
-                                    className="w-full md:w-auto "
-                                >
-                                    <div className="btn btn-primary btn-outline w-full md:w-auto " onClick={() => {
-                                        router.push('/creatorSignup');
-                                    }}>Join as a creator 🚀</div>
+                                    }}>Sign in 🚀</div>
                                 </motion.div>
                             </div>
 
@@ -115,17 +101,17 @@ export default function LandingPage() {
                             >
                                 <div className="w-1/2 mr-10">
                                     <h2 className="flex items-center font-semibold text-[1em] text-secondary">
-                                        Create content with bleeding-edge tech
+                                        Triage your DMs with AI
                                     </h2>
                                     <p className="text-[14px] leading-[20px] text-secondary font-normal">
-                                        Constantly creating content is exhausting. We will equip you with the best tech the world has ever seen, including AI. You are limited only by imagination not your time.                             </p>
+                                        Your inbox is a mix of opportunities and distractions. Leave this to our AI</p>
                                 </div>
                                 <div className="w-1/2">
                                     <h2 className="flex items-center font-semibold text-[1em] text-secondary">
-                                        Earn more and get spoiled by fans
+                                        Connect, Support, Upsell wihtout the hassle
                                     </h2>
                                     <p className="text-[14px] leading-[20px] text-secondary font-normal">
-                                        Your fans are spoiled with amazing content. They love you back by showering you with goodies. It is that simple.                            </p>
+                                        Our AI agent engage your conversations per your instruction base on the task, available 24/7, perfect every time.</p>
                                 </div>
 
                             </motion.div>
