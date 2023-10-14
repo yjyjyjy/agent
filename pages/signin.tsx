@@ -214,7 +214,7 @@ const SignIn = () => {
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="text-center lg:text-left">
-            <h1 className="text-5xl font-bold">Yuzu.fan</h1>
+            <h1 className="text-5xl font-bold">Waterbear.one</h1>
             <p className="py-6">Interact with thousands of virtual influencers</p>
           </div>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">

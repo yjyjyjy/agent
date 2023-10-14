@@ -105,7 +105,7 @@ export default function Footer() {
               </Link>
             </li>
             <li className="py-3 md:py-0 md:pb-4">
-              <Link href="mailto:support@yuzu.fan" className="text-white hover:text-zinc-200 transition ease-in-out duration-150">
+              <Link href="mailto:support@waterbear.one" className="text-white hover:text-zinc-200 transition ease-in-out duration-150">
                 Report Abuse
               </Link>
             </li>

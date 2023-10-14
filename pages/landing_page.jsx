@@ -51,7 +51,7 @@ export default function LandingPage() {
                                 }}
                                 className="relative md:ml-[-10px] mb-5 font-extrabold text-[5vw] md:text-[30px] font-inter text-secondary leading-[0.9] tracking-[-2px] "
                             >
-                                Yuzu.fan  <br />
+                                Waterbear.one  <br />
                             </motion.h3>
 
                             <motion.h1

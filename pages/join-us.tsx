@@ -79,7 +79,7 @@ export default function JoinUs() {
       <div className="card lg:text-left card-side bg-base-100 shadow-xl mt-10">
         <div className="card-body">
           <div className="py-6 text-left">
-            <p className="py-4 font-semibold card-title">Why yuzu.fan? </p>
+            <p className="py-4 font-semibold card-title">Why waterbear.one? </p>
             <ul className="list-inside space-y-2">
               <li>🎨 <span className="font-normal">Create with Ease: With our state-of-the-art AI Image Generation tools, transform your ideas into stunning, photo-realistic content in minutes, not days.</span></li>
               <li>💸 <span className="font-normal">Monetize Without Limits: Experience a platform that welcomes AI content, empowering you to earn at a level comparable to human influencers.</span></li>
