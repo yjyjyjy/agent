@@ -2,7 +2,6 @@ export default async function handler(req, res) {
   let mode = req.query["hub.mode"];
   let token = req.query["hub.verify_token"];
   let challenge = req.query["hub.challenge"];
-  console.log("🔴 agent received", JSON.stringify(req))
   // Check if a token and mode is in the query string of the request
   console.log("🔴 agent received.body", JSON.stringify(req.body))
   // if (mode && token) {
