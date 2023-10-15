@@ -18,4 +18,5 @@ export default async function handler(req, res) {
       res.sendStatus(403);
     }
   }
+  res.status(400).send({ error: '🔴 agent 400' });
 }
