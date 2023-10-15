@@ -1,9 +1,7 @@
-import { jsonToHtml } from '@/utils/json-to-html';
-import AWS from 'aws-sdk';
-AWS.config.update({ region: process.env.AWS_ACCESS_REGION });
+import { jsonToHtml } from '@/utils/json-to-html'
 import { SESClient, SendEmailCommand } from "@aws-sdk/client-ses";
 
-const createSendEmailCommand = async (toAddress, fromAddress, email_html) => {
+const createSendEmailCommand = (toAddress, fromAddress, email_html) => {
   return new SendEmailCommand({
     Destination: {
       ToAddresses: [
@@ -13,12 +11,12 @@ const createSendEmailCommand = async (toAddress, fromAddress, email_html) => {
     Message: {
       Body: {
         Html: {
-          Data: email_html.welcome_email_content,
+          Data: email_html,
         },
       },
       Subject: {
         Charset: "UTF-8",
-        Data: email_html.welcome_message,
+        Data: 'email summary',
       },
     },
     Source: fromAddress,
@@ -33,8 +31,12 @@ export default async function handler(req, res) {
     try {
       const { json, email } = body;
       const sesClient = new SESClient({ region: process.env.AWS_ACCESS_REGION });
+      console.log('🪵 send-email, 📧 email: ', email);
+      console.log('🪵 send-email, 📧 sesClient: ', sesClient);
       const html = jsonToHtml(json);
-      const sendEmailCommand = await createSendEmailCommand(email, 'founder@anydream.xyz', html);
+      console.log('🪵 send-email, 📧 html: ', html);
+      const sendEmailCommand = createSendEmailCommand(email, 'founder@anydream.xyz', html);
+      console.log('🪵 send-email, 📧 sendEmailCommand: ', sendEmailCommand);
 
       try {
         await sesClient.send(sendEmailCommand);
@@ -43,16 +45,13 @@ export default async function handler(req, res) {
         return res.status(200).json({ message: 'Email sent successfully!' });
       } catch (error) {
         // console.log(`🪵 handle_new_user ${userId}, 🤯 welcome new user send email error: `, error);
-        res.status(500).json({ error: 'Failed to send email' });
+        res.status(500).json({ error });
       }
-      res.status(200).json({ message: 'Email sent successfully!' });
     } catch (error) {
-      res.statusš(500).json({ message: 'Email sent failed!' });
+      console.log(error)
+      res.status(500).json({ message: 'Email sent failed!' });
     }
-    console.log(body);
-    res.status(200).json({ message: 'success' });
   } else {
-    res.setHeader('Allow', ['POST']);
     res.status(405).json({ message: `Method ${method} not allowed` });
   }
 }
